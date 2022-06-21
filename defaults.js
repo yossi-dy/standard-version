@@ -12,7 +12,9 @@ const defaults = {
   skip: {},
   dryRun: false,
   gitTagFallback: true,
-  preset: require.resolve('conventional-changelog-conventionalcommits')
+  preset: require.resolve('conventional-changelog-conventionalcommits'),
+  releaseCount: 1,
+  releaseNotesFile: 'RELEASE_NOTES.md'
 }
 
 /**
