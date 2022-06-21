@@ -103,6 +103,15 @@ const yargs = require('yargs')
     type: 'string',
     describe: 'Name of the package from which the tags will be extracted'
   })
+  .option('release-count', {
+    type: 'number',
+    default: defaults.releaseCount,
+    description: 'How many releases of changelog you want to generate. It counts from the upcoming release. Useful when you forgot to generate any previous changelog. Set to 0 to regenerate all. Passed to conventionalChangelog'
+  })
+  .option('release-notes-file', {
+    describe: 'Write the new changes aka release notes to this file',
+    default: defaults.releaseNotesFile
+  })
   .check((argv) => {
     if (typeof argv.scripts !== 'object' || Array.isArray(argv.scripts)) {
       throw Error('scripts must be an object')
